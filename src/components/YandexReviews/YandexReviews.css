@@ -1,0 +1,54 @@
+.yandex-reviews {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.yandex-reviews-container {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.yandex-reviews-iframe {
+  width: 100%;
+  min-height: 400px;
+  max-height: 600px;
+  border: none;
+  display: block;
+}
+
+.yandex-reviews-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.yandex-reviews-link a {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.yandex-reviews-link a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .yandex-reviews {
+    padding: 0 15px;
+    margin: 30px 0;
+  }
+}
+

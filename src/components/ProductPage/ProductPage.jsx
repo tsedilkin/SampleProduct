@@ -6,13 +6,15 @@ import ModelParams from '../ModelParams/ModelParams';
 import CompositionCare from '../CompositionCare/CompositionCare';
 import BoutiqueAvailability from '../BoutiqueAvailability/BoutiqueAvailability';
 import SizeChart from '../SizeChart/SizeChart';
+import YandexReviews from '../YandexReviews/YandexReviews';
 import { productImages } from '../../data/productImages';
 import { productData } from '../../data/productData';
 import { boutiqueData } from '../../data/boutiqueData';
+import { yandexReviewsConfig } from '../../data/yandexReviews';
 import { getProductImages } from '../../utils/getProductImages';
 import './ProductPage.css';
 
-const ProductPage = () => {
+const ProductPage = ({ showReviews = false }) => {
   const [showSizeChart, setShowSizeChart] = useState(false);
   const [selectedColor, setSelectedColor] = useState(productData.colors[0]?.value || '');
   const [currentImages, setCurrentImages] = useState(productImages);
@@ -57,13 +59,20 @@ const ProductPage = () => {
             <ImageSlider images={currentImages} />
           </div>
           <div className="product-details-wrapper">
-            <div className="product-details">
-              <ProductInfo 
-                productData={productData}
-                onShowSizeChart={scrollToSizeChart}
-                selectedColor={selectedColor}
-                onColorChange={setSelectedColor}
-              />
+            <div className={`product-details-columns ${showReviews && yandexReviewsConfig.enabled ? 'with-reviews' : 'without-reviews'}`}>
+              <div className="product-details">
+                <ProductInfo 
+                  productData={productData}
+                  onShowSizeChart={scrollToSizeChart}
+                  selectedColor={selectedColor}
+                  onColorChange={setSelectedColor}
+                />
+              </div>
+              {showReviews && yandexReviewsConfig.enabled && (
+                <div className="product-reviews-column">
+                  <YandexReviews companyId={yandexReviewsConfig.companyId} />
+                </div>
+              )}
             </div>
             <div className="product-description-sidebar">
               <ProductDescription 

@@ -57,6 +57,12 @@
   }
 }
 
+.header-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .header-logo {
   height: 40px;
   width: auto;
