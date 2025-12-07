@@ -5,12 +5,13 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: '0.0.0.0',
-    port: process.env.PORT || 3000,
+    port: parseInt(process.env.PORT) || 3000,
     strictPort: false,
     allowedHosts: [
       'localhost',
       '.railway.app',
-      '.up.railway.app'
+      '.up.railway.app',
+      'sampleproduct-production.up.railway.app'
     ]
   },
   server: {
