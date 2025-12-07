@@ -1,0 +1,70 @@
+.boutique-availability {
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.boutiques-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.boutique-item {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  background: #fff;
+}
+
+.boutique-header {
+  margin-bottom: 15px;
+}
+
+.boutique-hours {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.boutique-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.boutique-address {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.boutique-phone {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .boutique-availability {
+    padding: 0 15px;
+  }
+  
+  .boutiques-list {
+    grid-template-columns: 1fr;
+  }
+}
+
