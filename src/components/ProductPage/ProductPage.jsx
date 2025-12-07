@@ -77,7 +77,7 @@ const ProductPage = ({ showReviews = false }) => {
             <div className="product-description-sidebar">
               <ProductDescription 
                 description={productData.description}
-                features={productData.features}
+                characteristics={productData.characteristics}
               />
             </div>
           </div>

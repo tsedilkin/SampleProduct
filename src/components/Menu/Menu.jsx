@@ -42,6 +42,15 @@ const Menu = ({ isOpen, onClose }) => {
           </li>
           <li className="menu-item">
             <Link 
+              to="/product-scrollable" 
+              className={`menu-link ${location.pathname === '/product-scrollable' ? 'active' : ''}`}
+              onClick={handleLinkClick}
+            >
+              Товар (ZNWR style)
+            </Link>
+          </li>
+          <li className="menu-item">
+            <Link 
               to="/certificates" 
               className={`menu-link ${location.pathname === '/certificates' ? 'active' : ''}`}
               onClick={handleLinkClick}

@@ -1,23 +1,20 @@
-import { useState, useEffect } from 'react';
-import ImageSlider from '../ImageSlider/ImageSlider';
+import { useState, useEffect, useRef } from 'react';
+import ImageSliderScrollable from '../ImageSliderScrollable/ImageSliderScrollable';
 import ProductInfo from '../ProductInfo/ProductInfo';
 import ProductDescription from '../ProductDescription/ProductDescription';
-import ModelParams from '../ModelParams/ModelParams';
-import CompositionCare from '../CompositionCare/CompositionCare';
 import BoutiqueAvailability from '../BoutiqueAvailability/BoutiqueAvailability';
-import SizeChart from '../SizeChart/SizeChart';
-import CertificatesCompact from '../CertificatesCompact/CertificatesCompact';
 import { productImages } from '../../data/productImages';
 import { productData } from '../../data/productData';
 import { boutiqueData } from '../../data/boutiqueData';
 import { getProductImages } from '../../utils/getProductImages';
 import '../ProductPage/ProductPage.css';
-import './ProductWithCertificatesPage.css';
+import './ProductPageScrollable.css';
 
-const ProductWithCertificatesPage = () => {
+const ProductPageScrollable = () => {
   const [showSizeChart, setShowSizeChart] = useState(false);
   const [selectedColor, setSelectedColor] = useState(productData.colors[0]?.value || '');
   const [currentImages, setCurrentImages] = useState(productImages);
+  const sliderContainerRef = useRef(null);
   
   // Устанавливаем заголовок страницы
   useEffect(() => {
@@ -52,24 +49,33 @@ const ProductWithCertificatesPage = () => {
   };
 
   return (
-    <div className="product-page">
-      <div className="product-page-container">
-        <div className="product-main-section">
-          <div className="product-images">
-            <ImageSlider images={currentImages} />
+    <div className="product-page-scrollable">
+      <div className="product-page-scrollable-container">
+        <div className="product-page-scrollable-main">
+          <div 
+            className="product-page-scrollable-images" 
+            ref={sliderContainerRef}
+            style={{ 
+              minHeight: currentImages.length > 1 
+                ? `${currentImages.length * 100}vh` 
+                : '100vh' 
+            }}
+          >
+            <ImageSliderScrollable 
+              images={currentImages} 
+              scrollContainerRef={sliderContainerRef}
+            />
           </div>
-          <div className="product-details-wrapper">
-            <div className="product-details-columns without-reviews">
-              <div className="product-details">
-                <ProductInfo 
-                  productData={productData}
-                  onShowSizeChart={scrollToSizeChart}
-                  selectedColor={selectedColor}
-                  onColorChange={setSelectedColor}
-                />
-              </div>
+          <div className="product-page-scrollable-details-wrapper">
+            <div className="product-page-scrollable-details">
+              <ProductInfo 
+                productData={productData}
+                onShowSizeChart={scrollToSizeChart}
+                selectedColor={selectedColor}
+                onColorChange={setSelectedColor}
+              />
             </div>
-            <div className="product-description-sidebar">
+            <div className="product-page-scrollable-description">
               <ProductDescription 
                 description={productData.description}
                 characteristics={productData.characteristics}
@@ -78,25 +84,13 @@ const ProductWithCertificatesPage = () => {
           </div>
         </div>
 
-        <div className="product-content-section">
-          {productData.modelParams && <ModelParams params={productData.modelParams} />}
-          
-          {productData.composition && <CompositionCare composition={productData.composition} />}
-          
-          {productData.sizeChart && <SizeChart sizeChart={productData.sizeChart} shouldOpen={showSizeChart} />}
-        </div>
-
-        <div className="product-boutiques-section">
+        <div className="product-page-scrollable-boutiques">
           <BoutiqueAvailability boutiques={boutiqueData} />
-        </div>
-
-        <div className="product-certificates-section">
-          <CertificatesCompact />
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductWithCertificatesPage;
+export default ProductPageScrollable;
 

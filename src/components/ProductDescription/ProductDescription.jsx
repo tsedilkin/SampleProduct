@@ -1,6 +1,7 @@
+import ProductCharacteristics from '../ProductCharacteristics/ProductCharacteristics';
 import './ProductDescription.css';
 
-const ProductDescription = ({ description, features }) => {
+const ProductDescription = ({ description, characteristics }) => {
   return (
     <div className="product-description">
       <h2 className="section-title">Описание товара</h2>
@@ -13,14 +14,8 @@ const ProductDescription = ({ description, features }) => {
           )
         ))}
       </div>
-      {features && features.length > 0 && (
-        <ul className="features-list">
-          {features.map((feature, index) => (
-            <li key={index} className="feature-item">
-              {feature}
-            </li>
-          ))}
-        </ul>
+      {characteristics && characteristics.length > 0 && (
+        <ProductCharacteristics characteristics={characteristics} />
       )}
     </div>
   );
