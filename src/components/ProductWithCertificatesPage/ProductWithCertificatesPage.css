@@ -1,0 +1,16 @@
+.product-certificates-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .product-certificates-section {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+}
+

@@ -1,0 +1,74 @@
+.certificates-compact {
+  /* Отступы и границы управляются родительским контейнером */
+}
+
+.certificates-compact-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.certificates-compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.certificate-compact-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.certificate-compact-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.certificate-compact-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  padding: 8px 0;
+  transition: opacity 0.2s ease;
+}
+
+.certificate-compact-link:hover {
+  opacity: 0.7;
+}
+
+.certificate-compact-name {
+  font-size: 16px;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.certificate-compact-icon {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  padding: 4px 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .certificates-compact {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .certificates-compact-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .certificate-compact-name {
+    font-size: 14px;
+  }
+}
+

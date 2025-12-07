@@ -31,6 +31,24 @@ const Menu = ({ isOpen, onClose }) => {
               Товар (без отзывов)
             </Link>
           </li>
+          <li className="menu-item">
+            <Link 
+              to="/product-with-certificates" 
+              className={`menu-link ${location.pathname === '/product-with-certificates' ? 'active' : ''}`}
+              onClick={handleLinkClick}
+            >
+              Товар (с сертификатами)
+            </Link>
+          </li>
+          <li className="menu-item">
+            <Link 
+              to="/certificates" 
+              className={`menu-link ${location.pathname === '/certificates' ? 'active' : ''}`}
+              onClick={handleLinkClick}
+            >
+              Сертификаты
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

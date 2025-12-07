@@ -1,0 +1,12 @@
+.certificates-page {
+  min-height: 100vh;
+  background: #fff;
+  padding-top: 80px; /* Отступ для хедера */
+}
+
+.certificates-page-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+

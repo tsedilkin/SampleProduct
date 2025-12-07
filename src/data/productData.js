@@ -7,7 +7,7 @@ export const productData = {
   colors: [
     { name: 'Светло-коричневый', value: '#3d2817', image: '/images/product1/1.jpg', productId: 1 },
     { name: 'Темно-коричневый', value: '#5a3d2a', image: '/images/product2/1.jpg', productId: 2 },
-    { name: 'Темно-коричневый', value: '#8b6f47', image: '/images/product3/1.jpg', productId: 3 },
+    { name: 'Венге', value: '#8b6f47', image: '/images/product3/1.jpg', productId: 3 },
     { name: 'Золотисто-коричневый', value: '#a0826d', image: '/images/product4/1.jpg', productId: 4 },
     { name: 'Средне-коричневый', value: '#6b4e37', image: '/images/product5/1.jpg', productId: 5 },
     { name: 'Коричневый', value: '#7a5d4a', image: '/images/product6/1.jpg', productId: 6 }
