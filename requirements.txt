@@ -1,15 +1,14 @@
-# Node.js Project Dependencies
-# This is a React + Vite project
-# Install dependencies with: npm install
-
-# Runtime Dependencies
-react==18.2.0
-react-dom==18.2.0
-
-# Development Dependencies
-@vitejs/plugin-react==4.2.1
-vite==5.0.8
-
-# Note: This project uses npm/package.json for dependency management
-# See package.json for exact versions and additional dependencies
+# This is a Node.js/React project, not a Python project
+# Dependencies are managed through package.json and npm
+# 
+# To install dependencies, use:
+#   npm install
+#
+# To run the development server:
+#   npm run dev
+#
+# To build for production:
+#   npm run build
+#
+# See package.json for all dependencies and scripts
 
